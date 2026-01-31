@@ -1,0 +1,32 @@
+name: Auto Build DISCON DLL
+
+on:
+  push:
+    paths:
+      - "DISCON/DISCON.F90"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Intel oneAPI Fortran
+        uses: fortran-lang/setup-fortran@v1
+        with:
+          compiler: intel
+          version: '2023.2'
+
+      - name: Compile DISCON.dll
+        working-directory: DISCON
+        shell: cmd
+        run: build.bat
+
+      - name: Upload DISCON.dll
+        uses: actions/upload-artifact@v4
+        with:
+          name: DISCON-dll
+          path: DISCON/DISCON.dll
