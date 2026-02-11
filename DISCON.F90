@@ -73,7 +73,7 @@ REAL(4), PARAMETER           :: PC_KK         =       0.1099965                 
 REAL(4), PARAMETER           :: PC_KP         =       0.01882681                ! Proportional gain for pitch controller at rated pitch (zero), sec.
 REAL(4), PARAMETER           :: PC_MaxPit     =       1.570796                  ! Maximum pitch setting in pitch controller, rad.
 REAL(4), PARAMETER           :: PC_MaxRat     =       0.1396263                 ! Maximum pitch  rate (in absolute value) in pitch  controller, rad/s.
-REAL(4), PARAMETER           :: PC_MinPit     =       -2.5                       ! Minimum pitch setting in pitch controller, rad.
+REAL(4), PARAMETER           :: PC_MinPit     =       -2.0                       ! Minimum pitch setting in pitch controller, rad.
 REAL(4), PARAMETER           :: PC_RefSpd     =     122.9096                    ! Desired (reference) HSS speed for pitch controller, rad/s.
 REAL(4), SAVE                :: PitCom    (3)                                   ! Commanded pitch of each blade the last time the controller was called, rad.
 REAL(4)                      :: PitComI                                         ! Integral term of command pitch, rad.
